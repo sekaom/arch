@@ -25,5 +25,5 @@ pacman -S archlinux-keyring
 pacstrap /mnt base linux linux-headers linux-firmware base-devel neovim iwd networkmanager ttf-dejavu sudo bluez nano usbmuxd dhcpcd ntfs-3g wqy-zenhei grub efibootmgr jdk17-openjdk jdk8-openjdk intel-ucode amd-ucode pulseaudio xorg pacman gnome fcitx5 fcitx5-chinese-addons fcitx5-gtk fcitx5-qt fcitx5-configtool zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions 
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "gen fstab"
-curl -LfsS "https://gitee.com/sekaom/arch/raw/master/2.sh" >> /mnt/root/2.sh
-chmod a+x /mnt/root/2.sh
+curl -LfsS "https://gitee.com/sekaom/arch/raw/master/2sda.sh" >> /mnt/root/2sda.sh
+chmod a+x /mnt/root/2sda.sh
