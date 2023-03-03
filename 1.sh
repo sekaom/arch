@@ -7,10 +7,10 @@ echo "format swap"
 mkfs.ext4 /dev/sdb3
 mkfs.ext4 /dev/sdb4
 echo "format home and root"
+mount /dev/sdb3 /mnt 
 mkdir /mnt/boot
 mkdir /mnt/home
 mount /dev/sdb1 /mnt/boot
-mount /dev/sdb3 /mnt 
 mount /dev/sdb4 /mnt/home
 swapon /dev/sdb2 
 lsblk
