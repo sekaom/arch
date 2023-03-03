@@ -16,12 +16,7 @@ swapon /dev/sdb2
 lsblk
 sleep 10
 rm -rf /etc/pacman.d/mirrorlist
-echo "
-Server = https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch
-Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
-Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch
-Server = https://mirrors.cloud.tencent.com/archlinux/$repo/os/$arch
-#Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch" >> /etc/pacman.d/mirrorlist
+curl -LfsS "https://gitee.com/sekaom/arch/raw/master/mirrorlist" >> /etc/pacman.d/mirrorlist
 pacman -Sy
 echo "change mirrorlist"
 sleep 5
