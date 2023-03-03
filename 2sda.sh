@@ -551,6 +551,7 @@ INPUT_METHOD=fcitx
 SDL_IM_MODULE=fcitx
 GLFW_IM_MODULE=ibus" >> /etc/environment
 echo "set archlinuxcn"
+rm -rf /etc/pacman.conf
 curl -LfsS "https://gitee.com/sekaom/arch/raw/master/pacman.conf" >> /etc/pacman.conf
 pacman -Syyu
 pacman -S archlinuxcn-keyring
