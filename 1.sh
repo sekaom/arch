@@ -13,7 +13,7 @@ mount /dev/sdb1 /mnt/boot
 mount /dev/sdb3 /mnt 
 mount /dev/sdb4 /mnt/home
 swapon /dev/sdb2 
-lslblk
+lsblk
 sleep 10
 rm -rf /etc/pacman.d/mirrorlist
 echo "
