@@ -17,9 +17,9 @@ echo "==>Please enter the partition of the /home directory(such as '/dev/sda4')"
 read -p " =>partiton: " home_partition
 echo "--------------"
 echo "| boot: $boot_partition "
-echo "| boot: $swap_partition "
-echo "| boot: $root_partition "
-echo "| boot: $home_partition "
+echo "| swap: $swap_partition "
+echo "| root: $root_partition "
+echo "| home: $home_partition "
 read -p "All right(y or n)?" partition_sure
 partition_sure_1=y
 if [ "$partition_sure" = "$partition_sure_1" ]
