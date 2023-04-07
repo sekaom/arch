@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "========================================="
 echo "        ArchLinux install script"
 echo "          Produced by Sekaom"
@@ -7,13 +8,13 @@ sleep 1
 clear
 lsblk
 echo "==>Please enter the partition of the boot directory(such as '/dev/sda1')"
-read " =>partiton: " boot_partition
+read -p " =>partiton: " boot_partition
 echo "==>Please enter the partition of the swap directory(such as '/dev/sda2')"
-read " =>partiton: " swap_partition
+read -p " =>partiton: " swap_partition
 echo "==>Please enter the partition of the root directory(such as '/dev/sda3')"
-read " =>partiton: " root_partition
+read -p " =>partiton: " root_partition
 echo "==>Please enter the partition of the /home directory(such as '/dev/sda4')"
-read " =>partiton: " home_partition
+read -p " =>partiton: " home_partition
 echo "--------------"
 echo "| boot: $boot_partition "
 echo "| boot: $swap_partition "
@@ -21,11 +22,13 @@ echo "| boot: $root_partition "
 echo "| boot: $home_partition "
 read -p "All right(y or n)?" partition_sure
 partition_sure_1=y
-if [ "$partition_sure"="$partition_sure_1" ]; then
-    break
+if [ "$partition_sure" = "$partition_sure_1" ]
+    then
+        break
 else
-    exit 1
+        exit 1
 fi
+
 clear
 echo "==========sync time============"
 timedatectl set-ntp true
