@@ -75,7 +75,7 @@ fi
 echo "===========gen fstab==========="
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "=====Download step2 script====="
-curl -LfsS "https://gitee.com/sekaom/arch/raw/master/step2.sh" >> /mnt/root/step2.sh
+curl  "https://gitee.com/sekaom/arch/raw/master/step2.sh" >> /mnt/root/step2.sh
 chmod a+x /mnt/root/step2.sh
 
 echo "================================================================="
