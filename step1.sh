@@ -41,6 +41,7 @@ mkfs.ext4 -F $home_partition
 
 echo "========mount partitions======="
 mount $root_partition /mnt
+mkdir /mnt/boot
 mkdir /mnt/boot/efi
 mkdir /mnt/home
 mount $boot_partition /mnt/boot/efi
