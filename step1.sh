@@ -36,8 +36,8 @@ timedatectl set-ntp true
 echo "========format partition======="
 mkfs.fat -F32 $boot_partition
 mkswap $swap_partition
-mkfs.ext4 -q -F $root_partition
-mkfs.ext4 -q -F $home_partition
+mkfs.ext4 -F $root_partition
+mkfs.ext4 -F $home_partition
 
 echo "========mount partitions======="
 mount $root_partition /mnt
@@ -56,13 +56,14 @@ pacman -Sy
 read -p "Do you want tot install LTS kernel?(y or n)"  ltskernel
 ltskernel1=y
 echo "========Install Packages======="
-if [ "$ltskernel"="$ltskernel1" ]; then
-    pacman -S archlinux-keyring
-    pacstrap /mnt base linux-lts linux-lts-headers linux-firmware base-devel \
-    neovim iwd networkmanager ttf-dejavu sudo bluez nano usbmuxd dhcpcd \
-    ntfs-3g wqy-zenhei grub efibootmgr jdk17-openjdk jdk8-openjdk intel-ucode amd-ucode \
-    pulseaudio xorg pacman gnome fcitx5 fcitx5-chinese-addons fcitx5-gtk fcitx5-qt fcitx5-configtool \
-    zsh zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel10k zsh-completions 
+if [ "$ltskernel" = "$ltskernel1" ]
+    then
+        pacman -S archlinux-keyring
+        pacstrap /mnt base linux-lts linux-lts-headers linux-firmware base-devel \
+        neovim iwd networkmanager ttf-dejavu sudo bluez nano usbmuxd dhcpcd \
+        ntfs-3g wqy-zenhei grub efibootmgr jdk17-openjdk jdk8-openjdk intel-ucode amd-ucode \
+        pulseaudio xorg pacman gnome fcitx5 fcitx5-chinese-addons fcitx5-gtk fcitx5-qt fcitx5-configtool \
+        zsh zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel10k zsh-completions 
 else
     pacman -S archlinux-keyring
     pacstrap /mnt base linux linux-headers linux-firmware base-devel \
