@@ -7,13 +7,13 @@ sleep 1
 clear
 lsblk
 echo "==>Please enter the partition of the boot directory(such as '/dev/sda1')"
-read -p " =>partiton: " boot_partition
+read " =>partiton: " boot_partition
 echo "==>Please enter the partition of the swap directory(such as '/dev/sda2')"
-read -p " =>partiton: " swap_partition
+read " =>partiton: " swap_partition
 echo "==>Please enter the partition of the root directory(such as '/dev/sda3')"
-read -p " =>partiton: " root_partition
+read " =>partiton: " root_partition
 echo "==>Please enter the partition of the /home directory(such as '/dev/sda4')"
-read -p " =>partiton: " home_partition
+read " =>partiton: " home_partition
 echo "--------------"
 echo "| boot: $boot_partition "
 echo "| boot: $swap_partition "
